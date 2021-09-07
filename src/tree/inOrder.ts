@@ -1,6 +1,6 @@
 import type { BinaryTree } from './bt';
 /**
- * 中序遍历：
+ * 二差树 - 非递归版中序遍历：
  * 1. 对根节点的右子树进行中序遍历
  * 2. 访问根节点
  * 3. 对根节点的右子树进行中序遍历
@@ -21,11 +21,11 @@ const inOrder = <T>(root?: BinaryTree<T>) => {
       ptr = ptr.left;
     }
 
-    const hd = callStack.pop();
+    const tp = callStack.pop();
 
-    console.log(hd!.value);
+    console.log(tp!.value);
 
-    ptr = hd?.right;
+    ptr = tp?.right;
   }
 
   console.log('二叉树中序遍历非递归版 end');

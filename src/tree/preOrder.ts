@@ -1,6 +1,6 @@
 import type { BinaryTree } from './bt';
 /**
- * 前序遍历：
+ * 二差树 - 非递归版前序遍历：
  * 1. 访问根节点
  * 2. 对根节点的左子树进行前序遍历
  * 3. 对根节点的右子树进行前序遍历
@@ -15,16 +15,16 @@ const preOrder = <T>(root?: BinaryTree<T>) => {
   const callStack = [root];
 
   while (callStack.length) {
-    const hd = callStack.pop();
+    const tp = callStack.pop();
 
-    console.log(hd!.value);
+    console.log(tp!.value);
 
-    if (hd?.right) {
-      callStack.push(hd.right);
+    if (tp?.right) {
+      callStack.push(tp.right);
     }
 
-    if (hd?.left) {
-      callStack.push(hd.left);
+    if (tp?.left) {
+      callStack.push(tp.left);
     }
   }
 
