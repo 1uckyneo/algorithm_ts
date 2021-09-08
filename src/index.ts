@@ -1,7 +1,9 @@
 import tree from './tree';
+import heap from './heap';
 
 const main = () => {
-  tree.run();
+  // tree.run();
+  heap.run();
 };
 
 main();

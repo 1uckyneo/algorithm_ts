@@ -5,7 +5,7 @@ import type { Tree } from './tree';
  * 口诀：
  * 1. 新建一个队列，把根节点入队
  * 2. 把队头出队并访问
- * 3. 把对头的 children 挨个入队
+ * 3. 把队头的 children 挨个入队
  * 4. 重复 2、3 步知道队列为空
  */
 const bfs = <T>(root?: Tree<T>) => {

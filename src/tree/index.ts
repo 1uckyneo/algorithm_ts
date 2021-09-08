@@ -19,13 +19,13 @@ import postOrder from './postOrder';
 const run = () => {
   // recDfs(t); // 树 - 深度优先遍历 = 递归版
   // dfs(t); // 树 - 深度优先遍历 = 非递归版
-  bfs(t);
+  // bfs(t); // 树 - 广度度优先遍历
   // recPreorder(bt); // 二叉树 - 先序遍历 - 递归版
-  // preOrder(bt); // 二叉树 - 先序遍历 - 非递归版
+  preOrder(bt); // 二叉树 - 先序遍历 - 非递归版
   // recInOrder(bt); // 二叉树 - 中序遍历 - 递归版
   // inOrder(bt); // 二叉树 - 中序遍历 - 非递归版
   // recPostOrder(bt); // 二叉树 - 后序遍历 - 递归版
-  // postOrder(bt); // 二叉树 - 后序遍历 - 递归版
+  // postOrder(bt); // 二叉树 - 后序遍历 - 非递归版
 };
 
 const tree = {
