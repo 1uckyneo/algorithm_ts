@@ -11,11 +11,11 @@ const run = () => {
 
   nums.forEach((item) => {
     minHeap.insert(item);
-  });
 
-  while (minHeap.size() > k) {
-    minHeap.pop();
-  }
+    if (minHeap.size() > k) {
+      minHeap.pop();
+    }
+  });
 
   console.log(minHeap.peak());
 };
