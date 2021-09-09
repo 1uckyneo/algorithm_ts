@@ -40,6 +40,10 @@ export class MinHeap<T extends number = number> {
   }
 
   shiftDown(index: number) {
+    if (this.heap.length <= 1) {
+      return;
+    }
+
     const leftIndex = this.getLeftIndex(index);
     const rightIndex = this.getRightIndex(index);
     const currItem = this.heap[index]!;
@@ -71,7 +75,7 @@ export class MinHeap<T extends number = number> {
   pop() {
     const last = this.heap.pop();
 
-    if (this.heap.length > 1) {
+    if (this.heap.length >= 1) {
       this.heap[0] = last!;
       this.shiftDown(0);
     }
@@ -83,5 +87,9 @@ export class MinHeap<T extends number = number> {
 
   size() {
     return this.heap.length;
+  }
+
+  print() {
+    console.log(this.heap);
   }
 }
