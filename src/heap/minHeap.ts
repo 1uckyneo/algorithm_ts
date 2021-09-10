@@ -46,16 +46,14 @@ export class MinHeap<T extends number = number> {
 
     const leftIndex = this.getLeftIndex(index);
     const rightIndex = this.getRightIndex(index);
-    const currItem = this.heap[index]!;
-    const leftItem = this.heap[leftIndex];
-    const rightItem = this.heap[rightIndex];
 
-    if (leftItem && leftItem < currItem) {
+    // this.heap[index] 这些不要用临时变量存起来，因为swap有副作用，可能会导致数组的顺序变化
+    if (this.heap[leftIndex] && this.heap[leftIndex]! < this.heap[index]!) {
       this.swap(leftIndex, index);
       this.shiftDown(leftIndex);
     }
 
-    if (rightItem && rightItem < currItem) {
+    if (this.heap[rightIndex] && this.heap[rightIndex]! < this.heap[index]!) {
       this.swap(rightIndex, index);
       this.shiftDown(rightIndex);
     }
