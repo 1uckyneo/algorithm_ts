@@ -46,14 +46,19 @@ export class MinHeap<T extends number = number> {
 
     const leftIndex = this.getLeftIndex(index);
     const rightIndex = this.getRightIndex(index);
+    const left = this.heap[leftIndex];
+    const right = this.heap[rightIndex];
 
-    // this.heap[index] 这些不要用临时变量存起来，因为swap有副作用，可能会导致数组的顺序变化
-    if (this.heap[leftIndex] && this.heap[leftIndex]! < this.heap[index]!) {
+    /**
+     * this.heap[index] 不能用临时变量存起来
+     * 因为 swap 有副作用，在与左子节点比较后，this.heap[index] 的值可能与 left 的值 做了交换
+     */
+    if (left && left < this.heap[index]!) {
       this.swap(leftIndex, index);
       this.shiftDown(leftIndex);
     }
 
-    if (this.heap[rightIndex] && this.heap[rightIndex]! < this.heap[index]!) {
+    if (right && right < this.heap[index]!) {
       this.swap(rightIndex, index);
       this.shiftDown(rightIndex);
     }
