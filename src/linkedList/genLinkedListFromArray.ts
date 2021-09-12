@@ -1,4 +1,4 @@
-import { ListNode } from './linkedList';
+import { ListNode } from './listNode';
 
 export function genLinkedListFromArray<T>(arr: T[]) {
   if (arr.length) {
